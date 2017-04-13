@@ -13,12 +13,14 @@ import me.imid.swipebacklayout.lib.app.SwipeBackActivity;
  * CSDN:http://blog.csdn.net/w77996?viewmode=contents
  */
 public abstract class BaseActivity extends SwipeBackActivity {
+    //初始化控件
     public SwipeBackLayout mSwipeBackLayout;
-    private int flag ;
+  //  private int flag ;
     int edgeFlag = SwipeBackLayout.EDGE_LEFT;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        //初始化butterknife
         ButterKnife.bind(this);
         mSwipeBackLayout = getSwipeBackLayout();
        // mSwipeBackLayout.setEdgeTrackingEnabled(flag);
