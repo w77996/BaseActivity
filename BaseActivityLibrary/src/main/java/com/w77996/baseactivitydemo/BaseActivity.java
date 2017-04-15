@@ -2,9 +2,9 @@ package com.w77996.baseactivitydemo;
 
 import android.os.Bundle;
 
-import butterknife.ButterKnife;
 import me.imid.swipebacklayout.lib.SwipeBackLayout;
 import me.imid.swipebacklayout.lib.app.SwipeBackActivity;
+
 
 /**
  * time:2017/4/11
@@ -21,8 +21,9 @@ public abstract class BaseActivity extends SwipeBackActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         //初始化butterknife
-        ButterKnife.bind(this);
+     //   ButterKnife.bind(this);
         mSwipeBackLayout = getSwipeBackLayout();
+
        // mSwipeBackLayout.setEdgeTrackingEnabled(flag);
 
     }

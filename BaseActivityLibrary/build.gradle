@@ -1,5 +1,5 @@
 apply plugin: 'com.android.library'
-apply plugin: 'com.jakewharton.butterknife'
+
 android {
     compileSdkVersion 25
     buildToolsVersion "25.0.2"
@@ -19,14 +19,12 @@ android {
 }
 
 dependencies {
-    compile fileTree(dir: 'libs', include: ['*.jar'])
+    compile fileTree(include: ['*.jar'], dir: 'libs')
     testCompile 'junit:junit:4.12'
     compile 'com.android.support:appcompat-v7:25.2.0'
     //swipebacklayout滑动返回
-    compile 'me.imid.swipebacklayout.lib:library:1.0.0'
     //butterknife注解式框架
-    compile 'com.jakewharton:butterknife:8.5.1'
-    annotationProcessor 'com.jakewharton:butterknife-compiler:8.5.1'
     //logger日志打印
-  //  compile 'com.orhanobut:logger:1.15'
+    //  compile 'com.orhanobut:logger:1.15'
+    compile project(':library')
 }

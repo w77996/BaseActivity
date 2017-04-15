@@ -1,1 +1,1 @@
-include ':app', ':BaseActivityLibrary'
+include ':app', ':BaseActivityLibrary', ':samples', ':library'

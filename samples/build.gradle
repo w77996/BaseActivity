@@ -1,0 +1,49 @@
+apply plugin: 'com.android.application'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile 'com.android.support:appcompat-v7:25.0.1'
+    compile project(':library')
+    compile project(':BaseActivityLibrary')
+}
+
+android {
+    compileSdkVersion 25
+    buildToolsVersion "25.0.1"
+
+    defaultConfig {
+        minSdkVersion 16
+        targetSdkVersion 25
+    }
+
+    signingConfigs {
+        signing
+    }
+
+    buildTypes {
+        release {
+            if (project.hasProperty('storeFile')) {
+                signingConfig signingConfigs.signing
+            }
+        }
+    }
+}
+
+if (project.hasProperty('storeFile')) {
+    android.signingConfigs.signing.storeFile = file(storeFile)
+}
+
+if (project.hasProperty('storePassword')) {
+    android.signingConfigs.signing.storePassword = storePassword
+}
+
+if (project.hasProperty('keyAlias')) {
+    android.signingConfigs.signing.keyAlias = keyAlias
+}
+
+if (project.hasProperty('keyPassword')) {
+    android.signingConfigs.signing.keyPassword = keyPassword
+}
